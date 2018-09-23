@@ -22,7 +22,7 @@
 
 举个简单的例子就可以理解了。例如，与门（AND）。回忆一下逻辑运算里的AND，或者说 “∧”。当A与B都为1时，A ∧ B才为1，只要其中一个为0，那么A ∧ B就为0了。用电路图来表示如下：
 
-![AND gate](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_and-gate.png)
+![AND gate](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_and-gate.png)
 
 开关闭合代表1，不闭合代表0；灯泡亮代表1，不亮代表0。显然，只有当开关A和B都闭合时，灯泡才能亮，即1 AND 1 = 1。
 
@@ -63,15 +63,15 @@ XNOR或称 “异或非门”
 
 先来看看一个最简单的、什么 “门” 都没有的电路吧：
 
-![bare-lever-off](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-lever-off.png)
+![bare-lever-off](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_bare-lever-off.png)
 
 上图，拉杆没有供电，灯没有亮。现在，只要把拉杆拉向另一边，就可以看到：
 
-![bare-lever-on](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-lever-on.png)
+![bare-lever-on](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_bare-lever-on.png)
 
 然后，再试一下，用红石火把做电源的效果：
 
-![bare-torch](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-torch.png)
+![bare-torch](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_bare-torch.png)
 
 接下来，就要开始实现门电路了。
 
@@ -82,11 +82,11 @@ XNOR或称 “异或非门”
 
 ### NOT
 
-![not-0](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_not-0.png)
+![not-0](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_not-0.png)
 
 这就是一个非门了！现在的输入为0（显然拉杆没有供电，因为右边的红石粉末没有发亮），输出为1（灯亮了）。红石灯发亮是由于红石火把向其供电了。现在拨动拉杆，将输入改为1。
 
-![not-1](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_not-1.png)
+![not-1](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_not-1.png)
 
 灯熄灭了，即输出为0。上文讲过，红石火把在附着的方块被充能后熄灭。这里，这块圆石被拉杆充能，因此红石火把熄灭，不供电了，灯也无法接收到电能了。
 
