@@ -35,7 +35,9 @@
 :-:|:-:|:-:|:-:
 NOT|非门|NOT A|把0变1，1变0
 AND|与门|A AND B|当二者均为1时，结果为1；否则为0
-OR|或门|A OR B|当二者均为0时，结果为0；否则为1
+OR|或门|A OR B|当二者均为0时，结果为0；否则为1。即A OR B = NOT ((NOT A) AND (NOT B))
+
+OR的解释部分其实就是摩根定律，换一种表达方式也可以：A AND B = NOT ((NOT A) OR (NOT B))。
 
 接下来是复合了上述若干种门电路形成的门电路。
 
@@ -83,7 +85,7 @@ XNOR或称 “异或非门”
 <br/>
 
 ## **七种门电路在Minecraft中的实现**
-前文做了那么多铺垫，终于到了核心部分，接下来开始把上文说的7种门电路逐一实现。
+前文做了那么多铺垫，终于到了核心部分，接下来开始把上文说的7种门电路逐一实现。先进行一项约定，输入放在最右边，输出放在最左边。
 
 ### NOT
 
@@ -93,12 +95,59 @@ XNOR或称 “异或非门”
 
 ![not-1](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_not-1.png)
 
-灯熄灭了，即输出为0。上文讲过，红石火把在附着的方块被充能后熄灭。这里，这块圆石被拉杆充能，因此红石火把熄灭，不供电了，灯也无法接收到电能了。
+灯熄灭了，即输出为0。上文讲过，红石火把在附着的方块被充能后熄灭。这里，这块圆石被组装电源充能，因此红石火把熄灭，不供电了，灯也无法接收到电能了。
 
 输入0，输出1；输入1，输出0，完美！
 
+### OR
+
+![or-0](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_or-0.png)
+
+
+这是或门。红石粉末连成的导线从红石灯出来后，分成了两股，只要至少一股接收到了电能，红石灯即会接收到电能并发亮。上图是输入了两个1，1 OR 1 = 1得到了验证。下面验证 0 OR 1 和 0 OR 0 的情况。
+
+![or-1](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_or-1.png)
+
+↑ 0 OR 1 = 1
+
+![or-2](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_or-2.png)
+
+↑ 0 OR 0 = 0
+
+这样，或门就完美地实现了。
+
 ### AND
 
+前文提到过摩根定律，即A AND B = NOT ((NOT A) OR (NOT B))，此处就是用摩根定律来实现与门，其实就是把三个非门和一个或门组合起来。
+
+![and-0](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_and-0.png)
+
+↑ 1 AND 1 = 1
+
+![and-1](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_and-1.png)
+
+↑ 0 AND 1 = 0
+
+
+再次提醒别忘了我们的输入是最右边的，输出是红石灯，其他火把都是逻辑电路的一部分。如果为了看起来更像一个 “门”，我们可以把中间的实现全部封装起来：
+
+![and-2](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_and-2.png)
+
+### NAND
+
+接下来的几个都是上面的三种比较基础的门的组合了，就不一一验证了。
+
+与非门，就是两者先AND，结果再NOT。刚刚与门的实现原理是A AND B = NOT ((NOT A) OR (NOT B))，那么A NAND B = (NOT A) OR (NOT B),也就是说我们把最外层的那个非门去掉即可。
+
+![nand](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_nand.png)
+
+### NOR
+
+这个也很简单，就是在或门外层加一个非门即可。
+
+![nor](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_nor.png)
+
+### XOR
 
 
 
