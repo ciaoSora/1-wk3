@@ -1,4 +1,4 @@
-# **<font color = #0099ff>Minecraft门电路基础</font>**
+# **Minecraft门电路基础**
 
 在这之前一直对红石毫无了解，望而生畏，只能看看大神们实现出一个个厉害的玩意（比如计算器、自动农场、电梯等）。最近稍微了解了一下红石的工作机制，虽然仍是一个门外汉，但总算是纠正了 “红石是大神们的玩具” 的观念。希望本文可以给与曾经的我类似的玩家一些小小的帮助。
 
@@ -15,20 +15,20 @@
 
 <br/>
 
-## **<font color = #0099ff>门电路介绍</font>**
+## **门电路介绍**
 >*用以实现基本逻辑运算和复合逻辑运算的单元电路称为门电路。*
 
 这句话摘自百科，咋听起来很复杂，实则非也。简单（但不一定准确）来说，用 0 表示无信号，用 1 表示有信号。一个 “门” 的作用，就是把输入的布尔值转换为输出。用 “门” （门电路的英文是“gate circuit"）这个词是很形象的，几个输入通过一扇门进入一个房间，之后再出来，就成了输出。这个房间里面就装着复杂（或许不复杂）的电路，但是我们不必关注这些细节，把它当成黑盒即可。
 
 举个简单的例子就可以理解了。例如，与门（AND）。回忆一下逻辑运算里的AND，或者说 “∧”。当A与B都为1时，A ∧ B才为1，只要其中一个为0，那么A ∧ B就为0了。用电路图来表示如下：
 
-![AND gate](https://github.com/ciaoSora/1-wk3/blob/master/and-gate.png)
+![AND gate](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_and-gate.png)
 
 开关闭合代表1，不闭合代表0；灯泡亮代表1，不亮代表0。显然，只有当开关A和B都闭合时，灯泡才能亮，即1 AND 1 = 1。
 
 <br/>
 
-## **<font color = #0099ff>几种常见的门电路</font>**
+## **几种常见的门电路**
 先是最基础的三种，其他的都是基于这三种。
 
 类型 | 中文 | 表达 | 解释
@@ -50,7 +50,7 @@ XNOR或称 “异或非门”
 
 <br/>
 
-## **<font color = #0099ff>Minecraft中与电路相关的物品</font>**
+## **Minecraft中与电路相关的物品**
 这类物品大致可分为三类，分别为：
 
 - 电源：顾名思义，为电路提供能量，如红石火把、按钮、拉杆
@@ -63,30 +63,30 @@ XNOR或称 “异或非门”
 
 先来看看一个最简单的、什么 “门” 都没有的电路吧：
 
-![bare-lever-off](https://github.com/ciaoSora/1-wk3/blob/master/bare-lever-off.png)
+![bare-lever-off](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-lever-off.png)
 
 上图，拉杆没有供电，灯没有亮。现在，只要把拉杆拉向另一边，就可以看到：
 
-![bare-lever-on](https://github.com/ciaoSora/1-wk3/blob/master/bare-lever-on.png)
+![bare-lever-on](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-lever-on.png)
 
 然后，再试一下，用红石火把做电源的效果：
 
-![bare-torch](https://github.com/ciaoSora/1-wk3/blob/master/bare-torch.png)
+![bare-torch](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_bare-torch.png)
 
 接下来，就要开始实现门电路了。
 
 <br/>
 
-## **<font color = #0099ff>七种门电路在Minecraft中的实现</font>**
+## **七种门电路在Minecraft中的实现**
 前文做了那么多铺垫，终于到了核心部分，接下来开始把上文说的7种门电路逐一实现。
 
 ### NOT
 
-![not-0](https://github.com/ciaoSora/1-wk3/blob/master/not-0.png)
+![not-0](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_not-0.png)
 
 这就是一个非门了！现在的输入为0（显然拉杆没有供电，因为右边的红石粉末没有发亮），输出为1（灯亮了）。红石灯发亮是由于红石火把向其供电了。现在拨动拉杆，将输入改为1。
 
-![not-1](https://github.com/ciaoSora/1-wk3/blob/master/not-1.png)
+![not-1](https://github.com/ciaoSora/swi-homework/blob/gh-pages/images/1-wk3_not-1.png)
 
 灯熄灭了，即输出为0。上文讲过，红石火把在附着的方块被充能后熄灭。这里，这块圆石被拉杆充能，因此红石火把熄灭，不供电了，灯也无法接收到电能了。
 
