@@ -155,7 +155,7 @@ XNOR或称 “异或非门”
 
 以上就是一些简单的门电路，这些实现不一定是最简的，而是为了清晰，适度使用了一些冗余的物品。还有一些门电路（如异或门），实现起来有些复杂，等以后有空时再研究吧。希望本文可以帮到一些红石小白，略窥红石的风采。也希望各位可以用红石技术创造出更多方便、新颖、有趣的装置！
 
-![snake](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_snake.png)
+![snake](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_snake.gif)
 
 
 
