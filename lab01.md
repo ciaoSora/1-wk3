@@ -11,7 +11,9 @@
 
 3. Minecraft中与电路相关的物品
 
-4. 七种门电路在Minecraft中的实现
+4. 五种简单门电路在Minecraft中的实现
+
+5. 结语
 
 <br/>
 
@@ -84,7 +86,7 @@ XNOR或称 “异或非门”
 
 <br/>
 
-## **七种门电路在Minecraft中的实现**
+## **五种简单门电路在Minecraft中的实现**
 前文做了那么多铺垫，终于到了核心部分，接下来开始把上文说的7种门电路逐一实现。先进行一项约定，输入放在最右边，输出放在最左边。
 
 ### NOT
@@ -147,7 +149,13 @@ XNOR或称 “异或非门”
 
 ![nor](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_nor.png)
 
-### XOR
+<br/>
+
+## 结语
+
+以上就是一些简单的门电路，这些实现不一定是最简的，而是为了清晰，适度使用了一些冗余的物品。还有一些门电路（如异或门），实现起来有些复杂，等以后有空时再研究吧。希望本文可以帮到一些红石小白，略窥红石的风采。也希望各位可以用红石技术创造出更多方便、新颖、有趣的装置！
+
+![snake](https://raw.githubusercontent.com/ciaoSora/swi-homework/gh-pages/images/1-wk3_snake.png)
 
 
 
