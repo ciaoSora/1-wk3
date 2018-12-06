@@ -4,6 +4,8 @@
 
 详细请参见[源码][1]
 
+~~智障~~ 智能蛇代码请参见[源码][2]
+
 <br/>
 
 ## STEP 0：写出程序框架
@@ -54,3 +56,4 @@ int main() {
 最后再完善一下吃自己和吃墙的判断即可，这二者都不复杂，前者只需判断蛇头是否与其他蛇的部分重合，后者只需判断蛇头是否还在地图内部即可。
 
 [1]: https://github.com/ciaoSora/CharSnakeDummy
+[2]: https://github.com/ciaoSora/CharSnakeSmart
